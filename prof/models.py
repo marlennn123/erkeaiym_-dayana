@@ -29,8 +29,8 @@ class Student(models.Model):
         return self.student_name
 
 
-class Cours(models.Model):
-    cours_name = models.CharField(max_length=16)
+class Course(models.Model):
+    course_name = models.CharField(max_length=16)
     code = models.IntegerField()
     description = models.TextField()
     department = models.ForeignKey(Faculty, on_delete=models.CASCADE)
@@ -38,4 +38,4 @@ class Cours(models.Model):
     price = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return self.cours_name
+        return self.course_name

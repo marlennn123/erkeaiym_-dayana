@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import FacultyViewSets,ProfessorViewSets, StudentViewSets, CoursViewSets
+from .views import FacultyViewSets, ProfessorViewSets, StudentViewSets, CourseViewSets
+
+
 urlpatterns = [
     path('', FacultyViewSets.as_view({'get': 'list', 'post': 'create'}), name = 'faculty_list'),
     path('<int:pk>/', FacultyViewSets.as_view({'get': 'retrieve', 'put': 'update',
@@ -13,7 +15,7 @@ urlpatterns = [
     path('student/<int:pk>/', StudentViewSets.as_view({'get': 'retrieve', 'put': 'update',
                                                'delete': 'destroy'}), name='student_detail'),
 
-    path('cours/', CoursViewSets.as_view({'get': 'list', 'post': 'create'}), name='cours_list'),
-    path('cours/<int:pk>/', CoursViewSets.as_view({'get': 'retrieve', 'put': 'update',
-                                               'delete': 'destroy'}), name='cours_detail'),
+    path('course/', CourseViewSets.as_view({'get': 'list', 'post': 'create'}), name='course_list'),
+    path('course/<int:pk>/', CourseViewSets.as_view({'get': 'retrieve', 'put': 'update',
+                                               'delete': 'destroy'}), name='course_detail'),
 ]
